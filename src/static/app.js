@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchActivities() {
     try {
-      const response = await fetch("/activities", { cache: "no-store" });
+      const response = await fetch(`/activities?t=${Date.now()}`, { 
+        cache: "no-store",
+        headers: { "Pragma": "no-cache", "Cache-Control": "no-cache, no-store, must-revalidate" }
+      });
       const activities = await response.json();
 
       activitiesList.innerHTML = "";
