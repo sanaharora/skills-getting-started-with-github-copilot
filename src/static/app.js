@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = await response.json();
       if (response.ok) {
         displayMessage(result.message, "success");
-        fetchActivities();
+        await fetchActivities();
       } else {
         displayMessage(result.detail || "Failed to remove participant", "error");
       }
@@ -119,4 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchActivities();
 });
-//change
