@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     messageDiv.classList.remove("hidden");
 // Add a new function or modify existing code
 console.log('Updated with GitHub Copilot assistance');
+
     setTimeout(() => {
       messageDiv.classList.add("hidden");
     }, 5000);
@@ -36,7 +37,7 @@ console.log('Updated with GitHub Copilot assistance');
             return `
               <li>
                 <span>${email}</span>
-                <button class="participant-delete-button" data-activity="${name}" data-email="${email}" aria-label="Remove ${email}">×</button>
+                <button type="button" class="participant-delete-button" data-activity="${name}" data-email="${email}" aria-label="Remove ${email}">🗑️</button>
               </li>
             `;
           })
