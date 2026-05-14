@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messageDiv.textContent = text;
     messageDiv.className = `message ${type}`;
     messageDiv.classList.remove("hidden");
-
+// Add a new function or modify existing code
+console.log('Updated with GitHub Copilot assistance');
     setTimeout(() => {
       messageDiv.classList.add("hidden");
     }, 5000);
@@ -16,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchActivities() {
     try {
-      const response = await fetch("/activities", { cache: "no-store" });
+      const response = await fetch(`/activities?t=${Date.now()}`, { 
+        cache: "no-store",
+        headers: { "Pragma": "no-cache", "Cache-Control": "no-cache, no-store, must-revalidate" }
+      });
       const activities = await response.json();
 
       activitiesList.innerHTML = "";
